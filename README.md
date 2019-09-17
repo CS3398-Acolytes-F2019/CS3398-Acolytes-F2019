@@ -48,9 +48,10 @@ Show examples of usage:
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Confirmation feature ensuring users that their files were properly uploaded
+* Private file sharing between users denying viasbility to outside sources
+* Ability to create an account that will allow users to see what files have been uploaded
+* Users will have ability to know files sent and recieved were transmitted correctly and have not been compromised.
 
 To-do list:
 * Wow improvement to be done 1
