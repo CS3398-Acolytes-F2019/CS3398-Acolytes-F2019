@@ -13,10 +13,7 @@ who would use this application?
 * people who would like to have a simple way to store and retrieve data quickly.
 * people who would like to access their data remotely (whenever, and wherever they want).
 
-The impact or change hope to make:
-* Make cloud becomes a safer storage place.
-* people would feel more comfortable when storing their backup data on cloud.
-
+We hope to make a safe place to store data.
 
 
 ## Table of contents
@@ -39,7 +36,7 @@ Add more general information about project. What the purpose of the project is? 
 * NodeJS
 * Express
 * TypeScript
-* Firebase Hosting/Functions/Storage
+* Firebase Hosting/Functions/Storage/Database
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
