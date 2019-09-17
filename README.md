@@ -8,9 +8,9 @@ Created by
 * Jonathan Joiner
 * Damen Hannah
 
-who woud use this application?
+who would use this application?
 * people who care about data privacy and security.
-* people who would like to have a simple way to store and retrive data quickly.
+* people who would like to have a simple way to store and retrieve data quickly.
 * people who would like to access their data remotely (whenever, and wherever they want).
 
 
