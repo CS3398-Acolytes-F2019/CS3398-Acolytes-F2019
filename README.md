@@ -34,10 +34,10 @@ Add more general information about project. What the purpose of the project is? 
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* NodeJS
-* Express
-* TypeScript
-* Firebase Hosting/Functions/Storage/Database
+* [NodeJS](//nodejs.org/en/)
+* [Express](//expressjs.com/)
+* [TypeScript](//www.typescriptlang.org/)
+* [Firebase](//firebase.google.com/)
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
