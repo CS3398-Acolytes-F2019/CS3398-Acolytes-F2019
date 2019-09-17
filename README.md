@@ -48,10 +48,10 @@ Show examples of usage:
 
 ## Features
 List of features ready and TODOs for future development
-* Confirmation feature ensuring users that their files were properly uploaded
-* Private file sharing between users denying viasbility to outside sources
-* Ability to create an account that will allow users to see what files have been uploaded
-* Users will have ability to know files sent and recieved were transmitted correctly and have not been compromised.
+* Upload Confirmation: Confirmation feature ensuring users that their files were properly uploaded
+* Secure file upload: Private file sharing between users denying viasbility to outside sources
+* Account Creation: Ability to create an account that will allow users to see what files have been uploaded
+* Seamless user interface: Users will have ability to know files sent and recieved were transmitted correctly and have not been compromised.
 
 To-do list:
 * Wow improvement to be done 1
