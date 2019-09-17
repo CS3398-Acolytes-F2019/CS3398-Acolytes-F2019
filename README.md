@@ -13,6 +13,11 @@ who would use this application?
 * people who would like to have a simple way to store and retrieve data quickly.
 * people who would like to access their data remotely (whenever, and wherever they want).
 
+The impact or change hope to make:
+* Make cloud becomes a safer storage place.
+* people would feel more comfortable when storing their backup data on cloud.
+
+
 
 ## Table of contents
 * [General info](#general-info)
