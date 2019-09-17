@@ -8,14 +8,12 @@ Created by
 * Jonathan Joiner
 * Damen Hannah
 
-who would use this application?
-* people who care about data privacy and security.
-* people who would like to have a simple way to store and retrieve data quickly.
-* people who would like to access their data remotely (whenever, and wherever they want).
+Who would use this application?
+* People who care about data privacy and security.
+* People who would like to have a simple way to store and retrieve data quickly.
+* People who would like to access their data remotely.
 
-The impact or change hope to make:
-* Make cloud becomes a safer storage place.
-* people would feel more comfortable when storing their backup data on cloud.
+### We hope to make a safer web.
 
 
 
@@ -36,10 +34,10 @@ Add more general information about project. What the purpose of the project is? 
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* NodeJS
-* Express
-* TypeScript
-* Firebase Hosting/Functions/Storage
+* [NodeJS](//nodejs.org/en/)
+* [Express](//expressjs.com/)
+* [TypeScript](//www.typescriptlang.org/)
+* [Firebase](//firebase.google.com/)
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
