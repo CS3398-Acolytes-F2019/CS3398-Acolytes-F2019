@@ -3,7 +3,7 @@
 
 Created by
 * Jacob Hope
-* Ky Lee
+* Ky Le
 * Austin Gray
 * Jonathan Joiner
 * Damen Hannah
