@@ -8,12 +8,13 @@ Created by
 * Jonathan Joiner
 * Damen Hannah
 
-who would use this application?
-* people who care about data privacy and security.
-* people who would like to have a simple way to store and retrieve data quickly.
-* people who would like to access their data remotely (whenever, and wherever they want).
+Who would use this application?
+* People who care about data privacy and security.
+* People who would like to have a simple way to store and retrieve data quickly.
+* People who would like to access their data remotely.
 
-We hope to make a safe place to store data.
+### We hope to make a safer web.
+
 
 
 ## Table of contents
