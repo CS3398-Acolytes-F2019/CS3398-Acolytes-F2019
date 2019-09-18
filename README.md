@@ -1,6 +1,8 @@
 # file-trust
 > A trustless file sharing service for people who care about data privacy and security.
 
+![image](https://drive.google.com/uc?export=view&id=1rEjLaJfcg54Llk5pE-2HQSTQ4pAbPvH-)
+
 Created by
 * Jacob Hope
 * Ky Le
