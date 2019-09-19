@@ -41,7 +41,48 @@ Add more general information about project. What the purpose of the project is? 
 * [Firebase](//firebase.google.com/)
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+If on Windows, I highly recommend installing WSL Ubuntu 18.04 LTS
+> Start
+
+> Search for "Windows Store"
+
+> Open Windows Store
+
+> Search for "Ubuntu"
+
+> Select and install Ubuntu 18.04 LTS
+
+### Install NodeJS version 12.10.0
+
+#### Mac
+> https://nodejs.org/dist/v12.10.0/node-v12.10.0.pkg
+
+#### Ubuntu
+In terminal, run
+> ``sudo apt-get install curl``
+
+> ``curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -``
+
+> ``sudo apt-get install nodejs``
+
+#### Mac and Ubuntu
+
+Check version with
+> ``node -v``
+
+> ``npm -v``
+
+### Install Vue CLI globally.
+> ``npm install -g @vue/cli``
+
+Check version
+> ``vue --version``
+
+In the project directory run
+> ``npm run serve``
+
+A working version of the project will be available at ``localhost:8080``. Changes will automatically be compiled and the page will refresh.
+
 
 ## Code Examples
 Show examples of usage:
