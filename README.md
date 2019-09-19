@@ -73,7 +73,7 @@ Check version with
 > ``npm -v``
 
 ### Install Vue CLI globally.
-> ``npm install -g @vue/cli``
+> ``sudo npm install -g @vue/cli``
 
 Check version
 > ``vue --version``
@@ -81,7 +81,20 @@ Check version
 In the project directory run
 > ``npm run serve``
 
-A working version of the project will be available at ``localhost:8080``. Changes will automatically be compiled and the page will refresh.
+A working version of the client will be available at ``localhost:8080``. Changes will automatically be compiled and the page will refresh.
+
+### Install n to manage node versions
+> ``sudo npm install -g n``
+
+> ``sudo n 8``
+
+### Install Firebase CLI
+> ``sudo npm install -g firebase-tools``
+
+> ``cd functions``
+
+> ``sudo npm install``
+
 
 
 ## Code Examples
