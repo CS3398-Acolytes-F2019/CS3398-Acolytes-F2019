@@ -1,75 +1,65 @@
 <template>
-  <div class="upload-button">
-    <h2>Select an File</h2>
-    <input type="file" @change="onFileChange" />
-    {{progress}}
-  </div>
+    <div class="upload-button">
+        <!-- <input type="file" class="btn btn-primary" @change="onFileChange" /> -->
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button class="input-group-text" :disabled="isDisabled">Upload</button>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" @change="onFileChange" />
+                <label class="custom-file-label">Choose file</label>
+            </div>
+        </div>
+    </div>
 </template>
+
+<style scoped>
+</style>
 
 <script lang="ts">
 import Vue from "vue";
 import { HTMLInputEvent } from "../interfaces/HTMLInputEvent";
+import { FileStream } from "../modules/FileStream";
 
 export default Vue.extend({
-  data: () => {
-    return {
-        progress: 0
-    }
-  },
-  methods: {
-    onFileChange(event: HTMLInputEvent) {
-      const fileList = event.target.files;
-
-      if (!fileList) return;
-
-      const file = fileList[0];
-
-      let updateProgress = (progress: number) => {this.progress = progress};
-
-      const readableStream = new ReadableStream({
-        start: controller => {
-          const fileSize = file.size;
-          const chunkSize = 65536;
-          let offset = 0;
-
-          function readerHandler(event: ProgressEvent<any>) {
-
-            offset += chunkSize;
-
-            let slice = new Uint8Array(event.target.result);
-
-            updateProgress(progress());
-
-            if (!controller) return;
-
-            if (offset >= fileSize) {
-              controller.close();
-              return;
-            }
-
-            controller.enqueue(slice);
-
-            seek();
-          }
-
-          function progress() {
-            let progress = offset / fileSize;
-            if (progress > 1) return 100;
-            return progress * 100;
-          }
-
-          function seek() {
-            let fileReader = new FileReader();
-            let blob = file.slice(offset, offset + chunkSize);
-            fileReader.onload = readerHandler;
-            fileReader.readAsArrayBuffer(blob);
-          }
-
-          seek();
+    name: "upload-button",
+    data: () => 
+    {
+        let data =
+        {
+            progress: 0,
+            file: {} as File
         }
-      });
+        return data;
     },
-    updateProgress() {}
-  }
+    methods:
+    {
+        onFileChange(event: HTMLInputEvent) 
+        {
+            const fileList = event.target.files;
+
+            if (!fileList) return;
+
+            this.file = fileList[0];
+            console.log(this.file);
+        },
+        encryptAndUpload()
+        {
+            const readableStream = new ReadableStream({
+                start: controller => { new FileStream(this.file, controller, this.updateProgress) }
+            });
+        },
+        updateProgress(progress: number) 
+        {
+            progress > 1 ? this.progress = 100 : this.progress = progress * 100;
+            return;
+        },
+        isDisabled()
+        {
+            return !this.file;
+        }
+    }
 });
+
 </script>
