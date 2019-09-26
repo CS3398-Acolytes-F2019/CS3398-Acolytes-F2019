@@ -1,20 +1,20 @@
 <template>
     <div class="upload">
-        <upload-button></upload-button>
-        <progress-circle></progress-circle>
+        <file-input></file-input>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import UploadButton from "../components/UploadButton.vue";
-import ProgressCircle from "../components/ProgressCircle.vue";
+import FileInput from "../components/FileInput.vue";
 
 export default Vue.extend({
     name: "upload",
+    methods:
+    {
+    },
     components: {
-        UploadButton,
-        ProgressCircle
+        FileInput
     }
 });
 </script>

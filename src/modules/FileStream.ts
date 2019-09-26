@@ -10,21 +10,19 @@ export class FileStream
     constructor(private file: File, private controller: ReadableStreamDefaultController<any>, private progressHandler: Callback)
     {
         this.fileSize = file.size;
-        
+
         this.seek();
     }
 
-    private readerHandler(event: ProgressEvent<any>)
+    private readerHandler = (event: ProgressEvent<any>) =>
     {
         this.offset += this.chunkSize;
 
         let slice = new Uint8Array(event.target.result);
 
-        let progress = this.offset / this.fileSize;
+        this.progressHandler(this.offset / this.fileSize )
 
-        this.progressHandler(this.offset / this.fileSize);
-
-        if (this.offset >= this.fileSize) 
+        if (this.offset >= this.fileSize)
         {
             this.controller.close();
             return;
