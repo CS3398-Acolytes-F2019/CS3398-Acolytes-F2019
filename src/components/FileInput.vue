@@ -1,9 +1,6 @@
 <template>
     <div class="file-input">
         <div class="input-group">
-            <div class="input-group-prepend">
-                <button class="input-group-text" :disabled="isDisabled">&nbsp;&nbsp;&nbsp;&nbsp;Upload <progress-circle></progress-circle></button>
-            </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" @change="onFileChange" />
                 <label class="custom-file-label">{{ name }}</label>
@@ -42,14 +39,15 @@ export default Vue.extend({
 
             this.name = this.file.name;
 
-            this.encryptAndUpload();
+            this.encrypt();
         },
-        encryptAndUpload()
+        encrypt()
         {
-            let callback = this.updateProgress;
             const readableStream = new ReadableStream({
-                start: controller => { new FileStream(this.file, controller, callback) }
+                start: controller => { new FileStream(this.file, controller) }
             });
+
+            this.$emit("readable-stream", readableStream);
         },
         updateProgress(progress: number)
         {
@@ -59,7 +57,7 @@ export default Vue.extend({
 
             if (Math.round(old_progress) == Math.round(this.progress)) return;
 
-            this.$root.$emit("update_progress_message", Math.round(this.progress))
+            // this.$root.$emit("update_progress_message", Math.round(this.progress))
 
             return;
         },

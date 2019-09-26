@@ -7,7 +7,7 @@ export class FileStream
     private readonly chunkSize = 65536;
     private fileSize: number;
 
-    constructor(private file: File, private controller: ReadableStreamDefaultController<any>, private progressHandler: Callback)
+    constructor(private file: File, private controller: ReadableStreamDefaultController<any>)
     {
         this.fileSize = file.size;
 
@@ -19,8 +19,6 @@ export class FileStream
         this.offset += this.chunkSize;
 
         let slice = new Uint8Array(event.target.result);
-
-        this.progressHandler(this.offset / this.fileSize )
 
         if (this.offset >= this.fileSize)
         {

@@ -1,6 +1,6 @@
 <template>
     <div class="upload">
-        <file-input @file-stream="uploadStream"></file-input>
+        <file-input @readable-stream="uploadStream"></file-input>
     </div>
 </template>
 
@@ -13,12 +13,13 @@ export default Vue.extend({
     name: "upload",
     methods:
     {
-        uploadStream(fileStream: FileStream)
+        uploadStream(readableStream: ReadableStream)
         {
-
+            console.log(readableStream);
         }
     },
-    components: {
+    components:
+    {
         FileInput
     }
 });
