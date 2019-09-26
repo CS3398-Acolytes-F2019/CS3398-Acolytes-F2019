@@ -12,9 +12,6 @@
     </div>
 </template>
 
-<style scoped>
-</style>
-
 <script lang="ts">
 import Vue from "vue";
 import ProgressCircle from "./ProgressCircle.vue";
