@@ -1,0 +1,1 @@
+This is where documentation for Firebase Emulation will go. Namely for realtime database and storage.
