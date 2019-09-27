@@ -2,7 +2,7 @@
     <div class="file-input">
         <div class="input-group">
             <div class="custom-file">
-                <input type="file" class="custom-file-input" @change="onFileChange" />
+                <input type="file" class="custom-file-input"/>
                 <label class="custom-file-label">{{ name }}</label>
             </div>
         </div>
@@ -21,7 +21,6 @@ export default Vue.extend({
     {
         let data =
         {
-            progress: 0,
             file: {} as File,
             name: "Choose File"
         }
@@ -48,18 +47,6 @@ export default Vue.extend({
             });
 
             this.$emit("readable-stream", readableStream);
-        },
-        updateProgress(progress: number)
-        {
-            let old_progress = this.progress;
-
-            progress > 1 ? this.progress = 100 : this.progress = progress * 100;
-
-            if (Math.round(old_progress) == Math.round(this.progress)) return;
-
-            // this.$root.$emit("update_progress_message", Math.round(this.progress))
-
-            return;
         },
         isDisabled()
         {

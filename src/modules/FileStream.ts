@@ -1,5 +1,3 @@
-import { Callback } from "../interfaces/Types";
-
 export class FileStream
 {
 
