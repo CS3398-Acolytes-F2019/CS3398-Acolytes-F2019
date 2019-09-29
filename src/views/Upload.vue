@@ -1,6 +1,7 @@
 <template>
     <div class="upload">
         <file-input @readable-stream="uploadStream"></file-input>
+        <h1>hello world</h1>
     </div>
 </template>
 
