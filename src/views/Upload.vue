@@ -1,7 +1,9 @@
 <template>
     <div class="upload">
+
+
         <file-input @readable-stream="uploadStream"></file-input>
-        <h1>hello world</h1>
+        <img alt="Vue logo" src="../assets/file-trust1.png">
     </div>
 </template>
 
