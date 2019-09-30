@@ -2,7 +2,7 @@
     <div class="file-input">
         <div class="input-group">
             <div class="custom-file">
-                <input type="file" class="custom-file-input"/>
+                <input type="file" class="custom-file-input" @change="onFileChange"/>
                 <label class="custom-file-label">{{ name }}</label>
             </div>
         </div>
@@ -62,4 +62,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.custom-file-label {
+    margin: auto;
+}
 </style>

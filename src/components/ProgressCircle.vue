@@ -1,7 +1,8 @@
 <template>
     <div class="progress-circle">
-        <svg class="stat-circle" viewBox="-2 2 23 16.8">
-            <circle class="progress" cx="12" cy="9.4" r="5" :data-percentage="percentage" />
+        <svg class="stat-circle" width="150" viewBox="0 0 20 20">
+            <circle class="bg" cx="10" cy="10" r="8" />
+            <circle class="progress" cx="10" cy="10" r="8" :data-percentage="percentage" />
         </svg>
     </div>
 </template>
@@ -43,20 +44,22 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.stat-circle {
-    width: 25px;
-}
 .stat-circle circle.bg {
     fill: none;
-    stroke: #000;
-    stroke-width: 2.75;
+    stroke: #f1f1f1;
+    stroke-width: 2;
 }
 .stat-circle circle.progress {
     fill: none;
-    stroke: #00bd74;
-    stroke-width: 2.75;
+    stroke: #2ecc71;
+    stroke-width: 2;
     stroke-dasharray: 51 51;
     stroke-dashoffset: -51;
     stroke-linecap: round;
+}
+.stat-circle text {
+    font-size: 3px;
+    text-anchor: middle;
+    fill: #555;
 }
 </style>
