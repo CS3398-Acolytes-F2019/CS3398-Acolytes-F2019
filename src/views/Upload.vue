@@ -10,21 +10,58 @@
                 <div class="container">
                     <div class="row"></div>
                     <div class="row"></div>
-                    <div class="card-deck mb-3 text-center">
+                    <div class="card-deck mb-3">
                         <div class="card mb-4 box-shadow">
-                            <div class="card-header">
+                            <div class="card-header text-center">
                                 <h4 class="my-0 font-weight-normal">Upload</h4>
                             </div>
                             <div class="card-body">
-                                <progress-circle></progress-circle>
+                                <progress-circle class="text-center"></progress-circle>
                                 <br />
-                                <file-input @readable-stream="uploadStream"></file-input>
+                                <form>
+                                    <div class="form-group">
+                                        <file-input @readable-stream="uploadStream"></file-input>
+                                    </div>
+                                    <div class="form-group">
+                                        <input
+                                            type="password"
+                                            class="form-control"
+                                            id="exampleInputPassword1"
+                                            placeholder="Password (optional)"
+                                        />
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            id="option1Day"
+                                            v-model="deleteAfterOneDay"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="option1Day"
+                                        >Delete after 1 day</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            id="option1Download"
+                                            v-model="deleteAfterOneDownload"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="option1Download"
+                                        >Delete after 1 download</label>
+                                    </div>
+                                    <br />
+                                    <button
+                                        class="btn btn-primary"
+                                        :disabled="isDisabled"
+                                        @click="encryptAndUpload"
+                                    >Encrypt &amp; Upload</button>
+                                </form>
                                 <br />
-                                <button
-                                    class="btn btn-primary"
-                                    :disabled="isDisabled"
-                                    @click="encryptAndUpload"
-                                >Encrypt &amp; Upload</button>
                             </div>
                         </div>
                     </div>
@@ -49,12 +86,18 @@ export default Vue.extend({
         {
             fileStream: ReadableStream | null;
             isDisabled: boolean;
+            password: string | null;
+            deleteAfterOneDay: boolean;
+            deleteAfterOneDownload: boolean;
         }
 
         const data: IData =
         {
             fileStream: null,
-            isDisabled: true
+            isDisabled: true,
+            password: null,
+            deleteAfterOneDay: false,
+            deleteAfterOneDownload: false
         }
 
         return data;
@@ -66,32 +109,24 @@ export default Vue.extend({
             this.fileStream = readableStream;
             this.isDisabled = false;
         },
-        async encryptAndUpload()
+        async encryptAndUpload(event: Event)
         {
+            event.preventDefault();
+            
             if (!this.fileStream)
             {
                 return;
             }
             let reader = this.fileStream.getReader();
 
-            let index = 0;
 
             let chunk = await reader.read();
 
-            while (!chunk.done)
-            {
-
-                if (index !== 0)
-                {
-                    return;
-                }
-
-                let data =
+            let data =
                 {
                     chunk: chunk.value,
-                    index
+                    password: this.password
                 }
-
 
                 let response = await fetch("./api/upload", {
                     method: "post",
@@ -99,15 +134,11 @@ export default Vue.extend({
                     body: JSON.stringify(data)
                 });
 
-
-                console.log(JSON.stringify(data))
+                console.log(this.deleteAfterOneDay)
 
                 this.$root.$emit("update_progress_message", 100)
 
                 chunk = await reader.read();
-
-                index++;
-            }
         },
     },
     components:
