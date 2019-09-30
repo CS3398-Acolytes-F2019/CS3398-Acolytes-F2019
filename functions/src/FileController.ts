@@ -3,6 +3,8 @@ import { Firebase } from "./Firebase";
 
 export class FileController
 {
+
+    private static emulatedStorage = new Array<any>();
     
     /**
      * Stores the into Firebase Storage and creates a
@@ -20,13 +22,15 @@ export class FileController
         // store it in firebase storage
         // https://firebase.google.com/docs/storage/web/create-reference
 
-        let storage = Firebase.instance.storage();
+        // let storage = Firebase.instance.storage();
 
         // get a reference to storage
 
         // let storageRef = storage.ref();
 
         // https://firebase.google.com/docs/storage/web/upload-files
+
+
 
 
 
