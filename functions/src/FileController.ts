@@ -14,41 +14,39 @@ export class FileController
      */
     static store(request: Request, response: Response)
     {
-
-        // something is going to have to be done with it being a streamed upload
-
-        // make sure it's not too big. 1MB for now.
-        
-        // store it in firebase storage
-        // https://firebase.google.com/docs/storage/web/create-reference
-
-        // let storage = Firebase.instance.storage();
+        // TODO limit file to 1MB for now.
 
         // get a reference to storage
+        // let storageRef = Firebase.instance.app().storage().ref();
+        var bucket = Firebase.instance.storage().bucket();
 
-        // let storageRef = storage.ref();
+        //TODO following code works on its on but not with express yet
+        bucket.upload('local/image.jpg', { // local destination
+            destination: 'images/image.jpg', // Bucket destination
+            gzip: true,
+            metadata: {
+                cacheControl: 'public, max-age=31536000'
+              }
+        }).then(() => {
+            // TODO send success via response
+            console.log('File uploaded');
+        }).catch(err => {
+            // TODO send error via response
+            console.log('ERROR:', err);
+        });
 
         // https://firebase.google.com/docs/storage/web/upload-files
 
+        // // TODO create a new fileId by creating a random string and making sure that string hasn't been used.
+        // let fileId = "";
 
-
-
-
-        
-
-        // create a new fileId by creating a random string and making sure that string hasn't been used.
-        let fileId = "";
-
-        
-
-        // create a record of it, and it's location with 
-        // https://firebase.google.com/docs/database/web/read-and-write
-        let database = Firebase.instance.database();
-        database.ref("files/" + fileId).set({
-            storageUrl: "fakeURL",
-            options: {}
-        });
-
+        // // TODO create a record of it, and it's location with 
+        // // https://firebase.google.com/docs/database/web/read-and-write
+        // let database = Firebase.instance.database();
+        // database.ref("files/" + fileId).set({
+        //     storageUrl: "fakeURL",
+        //     options: {}
+        // });
     }
 
     /**
