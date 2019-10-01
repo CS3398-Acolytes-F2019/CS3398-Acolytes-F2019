@@ -18,7 +18,7 @@ export class FileController
 
         // get a reference to storage
         // let storageRef = Firebase.instance.app().storage().ref();
-        var bucket = Firebase.instance.storage().bucket();
+        const bucket = Firebase.instance.storage().bucket();
 
         //TODO following code works on its on but not with express yet
         bucket.upload('local/image.jpg', { // local destination
