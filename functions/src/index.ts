@@ -15,5 +15,4 @@ app.post("/api/store", FileController.store);
 app.get("/api/show", FileController.show);
 
 
-export default app;
-// export const api = functions.https.onRequest(app);
+export const api = functions.https.onRequest(app);
