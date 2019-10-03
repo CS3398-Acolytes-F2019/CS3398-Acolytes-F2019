@@ -29,8 +29,6 @@ export default Vue.extend({
 
             let offset = -51 - ((51 / 100) * this.percentage);
 
-            console.log("here");
-
             $statCircle.setAttribute("style", `stroke-dashoffset: ${offset}`)
         },
     },
