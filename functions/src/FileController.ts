@@ -1,61 +1,58 @@
-import {Request, Response} from "express";
+import { Request, Response } from "express";
 import { Firebase } from "./Firebase";
 
 export class FileController
 {
 
-    private static emulatedStorage = new Array<any>();
-    
     /**
-     * Stores the into Firebase Storage and creates a
-     * record of it's storage in the database.
-     * @param request The express request object.
-     * @param response The express response object
+     * Creates a reference to the file location in firebase storage,
+     * creates a record of the file in the database, and responds
+     * with the files upload location, and download url.
      */
-    static store(request: Request, response: Response)
+    static async store(request: Request, response: Response)
     {
-        // TODO limit file to 1MB for now.
+        let fileUrl = await generateUUID();
 
-        // get a reference to storage
-        // let storageRef = Firebase.instance.app().storage().ref();
-        const bucket = Firebase.instance.storage().bucket();
+        const database = Firebase.database();
 
-        //TODO following code works on its on but not with express yet
-        bucket.upload('local/image.jpg', { // local destination
-            destination: 'images/image.jpg', // Bucket destination
-            gzip: true,
-            metadata: {
-                cacheControl: 'public, max-age=31536000'
-              }
-        }).then(() => {
-            // TODO send success via response
-            console.log('File uploaded');
-        }).catch(err => {
-            // TODO send error via response
-            console.log('ERROR:', err);
+        database.ref('files/' + fileUrl).set({
+            name: request.body.name,
+            size: request.body.size,
+            options: {
+                password: request.body.options.password,
+                deleteAfterOneDay: request.body.options.deleteAfterOneDay,
+                deleteAfterOneDownload: request.body.options.deleteAfterOneDownload
+            }
         });
 
-        // https://firebase.google.com/docs/storage/web/upload-files
 
-        // // TODO create a new fileId by creating a random string and making sure that string hasn't been used.
-        // let fileId = "";
+        let res = {
+            fileUrl: fileUrl
+        }
 
-        // // TODO create a record of it, and it's location with 
-        // // https://firebase.google.com/docs/database/web/read-and-write
-        // let database = Firebase.instance.database();
-        // database.ref("files/" + fileId).set({
-        //     storageUrl: "fakeURL",
-        //     options: {}
-        // });
+        response.send(res);
     }
 
     /**
-     * Returns a link to the requested file.
-     * @param request The express request object.
-     * @param response The express response object
+     * Returns a reference to requested file.
      */
-    static show(request: Request, response: Response)
+    static async show(request: Request, response: Response)
     {
-        // make sure it hasn't been downloaded too many times.
+        let file = await Firebase.database().ref('users/' + request.params.fileUrl).once('value');
+        response.send(file.val());
     }
+}
+
+function generateUUID()
+{
+    let random = ""
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+
+    while (random.length < 10)
+    {
+        random += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return random;
 }

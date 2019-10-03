@@ -1,22 +1,33 @@
+import { aesGcmEncrypt } from "./GCM";
+
 export class FileStream
 {
 
     private offset = 0;
-    private readonly chunkSize = 65536;
+    private readonly chunkSize = 1000000;
     private fileSize: number;
 
-    constructor(private file: File, private controller: ReadableStreamDefaultController<any>)
+    private iv: Uint8Array;
+    private alg: { name: string, iv: Uint8Array };
+    private key: CryptoKey | null = null;
+
+    constructor(private file: File, private password: string, private controller: ReadableStreamDefaultController<any>)
     {
         this.fileSize = file.size;
-
+        this.iv = crypto.getRandomValues(new Uint8Array(12));
+        this.alg = { name: 'AES-GCM', iv: this.iv };
         this.seek();
     }
 
-    private readerHandler = (event: ProgressEvent<any>) =>
+    private readerHandler = async (event: any) =>
     {
         this.offset += this.chunkSize;
 
-        let slice = new Uint8Array(event.target.result);
+        const plaintextUint8 = new Uint8Array(event.target.result);
+
+        const ciphertext = aesGcmEncrypt(plaintextUint8, this.password)
+
+        this.controller.enqueue(plaintextUint8);
 
         if (this.offset >= this.fileSize)
         {
@@ -24,16 +35,14 @@ export class FileStream
             return;
         }
 
-        this.controller.enqueue(slice);
-
         this.seek();
     }
 
-    public seek()
+    private seek()
     {
         const fileReader = new FileReader();
 
-        const  blob = this.file.slice(this.offset, this.offset + this.chunkSize);
+        const blob = this.file.slice(this.offset, this.offset + this.chunkSize);
 
         fileReader.onload = this.readerHandler;
 

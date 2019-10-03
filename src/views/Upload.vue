@@ -6,7 +6,13 @@
                     <h1 class="display-4">File Trust</h1>
                     <hr />
                 </div>
-
+                <div class="text-center" v-if="downloadUrl">
+                    <div class="alert alert-success" role="alert">
+                        <strong>File Uploaded!</strong>
+                        <br />
+                        <a v-bind:href="downloadUrl">{{downloadUrl}}</a>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row"></div>
                     <div class="row"></div>
@@ -20,7 +26,10 @@
                                 <br />
                                 <form>
                                     <div class="form-group">
-                                        <file-input @readable-stream="uploadStream"></file-input>
+                                        <file-input
+                                            @file-event="fileInputHandler"
+                                            v-bind:max-size="maxSize"
+                                        ></file-input>
                                     </div>
                                     <div class="form-group">
                                         <input
@@ -28,6 +37,7 @@
                                             class="form-control"
                                             id="exampleInputPassword1"
                                             placeholder="Password (optional)"
+                                            v-model="password"
                                         />
                                     </div>
                                     <div class="form-check">
@@ -55,11 +65,13 @@
                                         >Delete after 1 download</label>
                                     </div>
                                     <br />
-                                    <button
-                                        class="btn btn-primary"
-                                        :disabled="isDisabled"
-                                        @click="encryptAndUpload"
-                                    >Encrypt &amp; Upload</button>
+                                    <div class="text-center">
+                                        <button
+                                            class="btn btn-primary"
+                                            :disabled="isDisabled"
+                                            @click="encryptAndUpload"
+                                        >Encrypt &amp; Upload</button>
+                                    </div>
                                 </form>
                                 <br />
                             </div>
@@ -77,6 +89,23 @@ import Vue from "vue";
 import FileInput from "../components/FileInput.vue";
 import ProgressCircle from "../components/ProgressCircle.vue";
 import { FileStream } from '../modules/FileStream';
+import { Firebase } from "../modules/Firebase";
+
+
+interface FileEvent
+{
+    readableStream: ReadableStream;
+    file: File;
+    key: string;
+}
+
+interface StoreJSON
+{
+    fileUrl: string;
+}
+
+
+const functions = "https://us-central1-file-trust.cloudfunctions.net";
 
 export default Vue.extend({
     name: "upload",
@@ -84,69 +113,150 @@ export default Vue.extend({
     {
         interface IData
         {
+            maxSize: number;
             fileStream: ReadableStream | null;
+            file: File | null;
+            key: string | null;
             isDisabled: boolean;
             password: string | null;
             deleteAfterOneDay: boolean;
             deleteAfterOneDownload: boolean;
+            downloadUrl: string;
         }
 
-        const data: IData =
-        {
+        const data: IData = {
+            maxSize: 1e+6,
             fileStream: null,
+            file: null,
+            key: null,
             isDisabled: true,
             password: null,
             deleteAfterOneDay: false,
-            deleteAfterOneDownload: false
+            deleteAfterOneDownload: false,
+            downloadUrl: ""
         }
 
         return data;
     },
     methods:
     {
-        uploadStream(readableStream: ReadableStream)
+        fileInputHandler(options: any)
         {
-            this.fileStream = readableStream;
+            this.fileStream = options.readableStream;
+            this.file = options.file;
+            this.key = options.password;
             this.isDisabled = false;
         },
         async encryptAndUpload(event: Event)
         {
             event.preventDefault();
-            
-            if (!this.fileStream)
+
+            if (!this.file)
             {
                 return;
             }
-            let reader = this.fileStream.getReader();
 
+            // Store file into database
+            const file = {
+                name: this.file.name,
+                size: this.file.size,
+                options: {
+                    password: this.password,
+                    deleteAfterOneDay: this.deleteAfterOneDay,
+                    deleteAfterOneDownload: this.deleteAfterOneDownload
+                }
+            }
+
+            const storeResponse = await fetch("https://us-central1-file-trust.cloudfunctions.net/api/store", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(file)
+            })
+
+            let fileUrl = await generateUUID();
+
+            const database = Firebase.database();
+
+            database.ref('files/' + fileUrl).set({
+                name: this.file.name,
+                size: this.file.size,
+                options: {
+                    password: this.password,
+                    deleteAfterOneDay: this.deleteAfterOneDay,
+                    deleteAfterOneDownload: this.deleteAfterOneDownload
+                },
+            });
+
+            if (!this.fileStream) return;
+
+            const reader = this.fileStream.getReader();
 
             let chunk = await reader.read();
 
-            let data =
+            let index = 0;
+
+            while (!chunk.done)
+            {
+
+                let storageReference = Firebase.storage().ref();
+
+                let fileReference = storageReference.child(`files/${fileUrl}/${index}.chunk`)
+
+                await fileReference.put(chunk.value);
+
+                index++;
+
+                let progress = (65536 * index) / this.file.size * 100;
+
+                if (progress > 100)
                 {
-                    chunk: chunk.value,
-                    password: this.password
+                    progress = 100;
                 }
 
-                let response = await fetch("./api/upload", {
-                    method: "post",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
-
-                console.log(this.deleteAfterOneDay)
-
-                this.$root.$emit("update_progress_message", 100)
+                this.$root.$emit("update_progress_message", progress)
 
                 chunk = await reader.read();
+            }
+
+            this.downloadUrl = `${window.location.href}download/${fileUrl}/#${this.key}`
+            this.done();
+
+
         },
+        done()
+        {
+            this.file = null;
+            this.fileStream = null;
+            this.key = null;
+            this.isDisabled = true;
+            this.password = "";
+            this.deleteAfterOneDay = false;
+            this.deleteAfterOneDownload = false;
+            this.$root.$emit("update_progress_message", 0)
+            this.$root.$emit("done");
+        }
     },
-    components:
-    {
+    components: {
         FileInput,
         ProgressCircle
     }
 });
+
+function generateUUID()
+{
+    let random = ""
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+
+    while (random.length < 10)
+    {
+        random += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return random;
+}
 </script>
 
 <style scoped>
