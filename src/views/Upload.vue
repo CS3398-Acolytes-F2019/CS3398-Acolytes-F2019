@@ -59,10 +59,9 @@
                                             id="option1Download"
                                             v-model="deleteAfterOneDownload"
                                         />
-                                        <label
-                                            class="form-check-label"
-                                            for="option1Download"
-                                        >Delete after 1 download</label>
+                                        <label class="form-check-label" for="option1Download">
+                                            Delete after 1 download
+                                        </label>
                                     </div>
                                     <br />
                                     <div class="text-center">
@@ -103,9 +102,6 @@ interface StoreJSON
 {
     fileUrl: string;
 }
-
-
-const functions = "https://us-central1-file-trust.cloudfunctions.net";
 
 export default Vue.extend({
     name: "upload",
@@ -166,14 +162,6 @@ export default Vue.extend({
                     deleteAfterOneDownload: this.deleteAfterOneDownload
                 }
             }
-
-            const storeResponse = await fetch("https://us-central1-file-trust.cloudfunctions.net/api/store", {
-                method: "post",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(file)
-            })
 
             let fileUrl = await generateUUID();
 

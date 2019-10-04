@@ -53,8 +53,8 @@
 import Vue from "vue";
 import Loading from "../components/Loading.vue";
 import { Firebase } from "../modules/Firebase";
-import { DownloadStream } from "../modules/DownloadStream";
-import { aesGcmDecrypt } from '../modules/GCM';
+import { DownloadStream } from "../modules/Download";
+// import { aesGcmDecrypt } from '../modules/Encrypt';
 const streamSaver = require('streamsaver')
 
 export default Vue.extend({
@@ -125,7 +125,7 @@ export default Vue.extend({
 
             if (!file.val())
             {
-                this.$router.push("404")
+                this.$router.push("/404")
             }
 
             this.name = file.val().name;

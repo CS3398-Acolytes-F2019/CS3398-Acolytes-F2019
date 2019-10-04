@@ -107,7 +107,7 @@ export default Vue.extend({
             if (!isFile(file)) return;
 
             const readableStream = new ReadableStream({
-                start: controller => { new FileStream(file, password, controller) }
+                start: controller => { new FileStream(file, controller) }
             });
 
             this.$emit("file-event", { readableStream, file, password });
