@@ -33,6 +33,18 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/c
 This is how we will be able to handle larger files, doing a streaming upload and encryption. Right now it's not really being used to it's full potential.
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/modules/FileStream.ts
 
+#### Jacob
+
+I created the Firebase class, FileController functions, macOS setup instructions, and the app's infographic.
+
+The following class I wrote, [Firebase](https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/6ecf78ce41ef83cc8924e883b01d1ff647ee2a50), handles initializing a secure and stable connection to upload and download to and from the Firebase bucket using Firebase-Admin module. To connect, it reads a JSON file, that for security purposes is not on this repo and is added in the [.gitignore](https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/8a460a8ecd5de4fbeb082a405e2d09734437c5c4) since it contains a private key, sends it to the Firebase server, has the information verified, and then upon successful verification the connection between the file-trust app and Firebase is created allowing for the file-trust app to make Firebase api calls.
+
+When a successful connection is made between the file-trust app and the Firebase bucket following code I wrote, [FileController](https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/c9a151d03f904220183e464f9417843b0d30f166), is able to successfully upload a file to a Firebase bucket.
+
+For MacOS, I wrote additional [setup instructions](https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/55232331d4c6172afa0ffbd1b329076c7d227960).
+
+Additionally, I created the [file-trust graphic](https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/7c587d2dd6c7047c500ec07a1f96743ce395c300) for this README.
+
 #### Ky Le
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/08629f999c4efda041392f8da6a0139ba5fd3b4d
 Create User Interface(UI) 
