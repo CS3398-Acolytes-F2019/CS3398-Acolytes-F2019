@@ -16,6 +16,32 @@ Who would use this application?
 
 ### We are making a safer web.
 
+## Sprint 1 in Review
+
+### Accomplishments
+
+#### Damen
+
+I created the file input, the status circle, file streaming.
+
+This Vue component triggers a browser event to choose a file on one's system, and emits a reference to that file for further use.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/components/FileInput.vue
+
+This should show the progress of the download/encryption. Because this only updates as each chunk of the file is streamed, and only one chunk is processed right now (1MB chunks, 1MB file size limit), it does not update before completion. This will be fixed in the future.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/components/ProgressCircle.vue
+
+This is how we will be able to handle larger files, doing a streaming upload and encryption. Right now it's not really being used to it's full potential.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/modules/FileStream.ts
+
+### Status
+
+Upload and sharing feature is done, however heavy refactorings are expected.
+
+## Damen
+Making good progress. Biggest priority is getting team memebers on the same page.
+
+
+
 
 
 ## Table of contents
