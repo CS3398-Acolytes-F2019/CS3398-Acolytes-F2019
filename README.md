@@ -41,10 +41,9 @@ Upload and sharing feature is done, however heavy refactorings are expected.
 Making good progress. Biggest priority is getting team memebers on the same page.
 
 #### Ky Le
-
-Create User Interface(UI) 
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/08629f999c4efda041392f8da6a0139ba5fd3b4d
-Using Vue and Vue's components to such as:
+Create User Interface(UI) 
+Using Vue and Vue's components such as:
 - web title.
 - animation circle when uploading file, so it will let's us know when a file is being loaded completely.
 - a input box, which links to local directory in your computer, will let you choose the file that you want to share.
