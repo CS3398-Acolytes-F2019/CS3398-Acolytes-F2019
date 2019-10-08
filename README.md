@@ -33,13 +33,6 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/c
 This is how we will be able to handle larger files, doing a streaming upload and encryption. Right now it's not really being used to it's full potential.
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/modules/FileStream.ts
 
-### Status
-
-Upload and sharing feature is done, however heavy refactorings are expected.
-
-#### Damen
-Making good progress. Biggest priority is getting team memebers on the same page.
-
 #### Ky Le
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/08629f999c4efda041392f8da6a0139ba5fd3b4d
 Create User Interface(UI) 
@@ -54,10 +47,23 @@ Using Vue and Vue's components such as:
 
 - After a file is loaded, a URL will be generated. 
 
+#### Austin
+Worked on File Uploading and diving into how we want to go about encrypting and decrypting files.
+
+This .md will continuosly be updated to track our progress with the encrypting format and process. (//github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/EncryptionFormat.md)
+
 ### Status
+
+Upload and sharing feature is done, however heavy refactorings are expected.
+
+#### Damen
+Making good progress. Biggest priority is getting team memebers on the same page.
+
+### Ky
 Done
 
-
+### Austin
+Working to being encrpyting files now that we have the functionality.  Finding the best format to go about this by researching similar examples and seeing what makes sense for our implementation.
 
 
 
