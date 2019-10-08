@@ -37,7 +37,7 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/m
 
 Upload and sharing feature is done, however heavy refactorings are expected.
 
-## Damen
+#### Damen
 Making good progress. Biggest priority is getting team memebers on the same page.
 
 
