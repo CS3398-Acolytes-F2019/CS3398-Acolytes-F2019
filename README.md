@@ -61,7 +61,7 @@ Upload and sharing feature is done, however heavy refactorings are expected.
 Making good progress. Biggest priority is getting team memebers on the same page.
 
 ### Ky
-Done
+will be working on making the UI more attractive and more functions added.
 
 ### Austin
 Working to being encrpyting files now that we have the functionality.  Finding the best format to go about this by researching similar examples and seeing what makes sense for our implementation.
