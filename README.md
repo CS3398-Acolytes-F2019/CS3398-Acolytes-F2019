@@ -72,6 +72,10 @@ Upload and sharing feature is done, however heavy refactorings are expected.
 #### Damen
 Making good progress. Biggest priority is getting team memebers on the same page.
 
+#### Jacob
+Making good progress learning about Firebase and implementing code to interact with Firebase.
+Next steps are to bring the team on the same page and continue learning and implementing more Firebase features.
+
 ### Ky
 will be working on making the UI more attractive and more functions added.
 
