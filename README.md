@@ -14,7 +14,7 @@ Who would use this application?
 * People who would like to have a simple way to store and retrieve data quickly.
 * People who would like to access their data remotely.
 
-### We hope to make a safer web.
+### We are making a safer web.
 
 
 
@@ -41,7 +41,11 @@ Add more general information about project. What the purpose of the project is? 
 * [Firebase](//firebase.google.com/)
 
 ## Setup
-If on Windows, I highly recommend installing WSL Ubuntu 18.04 LTS
+
+### Windows
+Sorry, we don't develop on Windows OS, we highly recommend installing WSL Ubuntu 18.04 LTS.
+We do however recommend using [Visual Studio Code](https://code.visualstudio.com/)
+
 > Start
 
 > Search for "Windows Store"
@@ -55,7 +59,9 @@ If on Windows, I highly recommend installing WSL Ubuntu 18.04 LTS
 ### Install NodeJS version 12.10.0
 
 #### Mac
-> https://nodejs.org/dist/v12.10.0/node-v12.10.0.pkg
+> Have [Homebrew](https://brew.sh/) installed
+
+> ``brew install node@12.10.0``
 
 #### Ubuntu
 In terminal, run
@@ -73,7 +79,10 @@ Check version with
 > ``npm -v``
 
 ### Install Vue CLI globally.
+
 > ``sudo npm install -g @vue/cli``
+
+#### Mac and Ubuntu
 
 Check version
 > ``vue --version``
@@ -84,6 +93,7 @@ In the project directory run
 A working version of the client will be available at ``localhost:8080``. Changes will automatically be compiled and the page will refresh.
 
 ### Install n to manage node versions
+
 > ``sudo npm install -g n``
 
 > ``sudo n 8``
@@ -94,8 +104,6 @@ A working version of the client will be available at ``localhost:8080``. Changes
 > ``cd functions``
 
 > ``sudo npm install``
-
-
 
 ## Code Examples
 Show examples of usage:

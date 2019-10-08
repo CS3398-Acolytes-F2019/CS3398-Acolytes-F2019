@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "esnext",
     "strict": true,
-    "jsx": "preserve",
+    "strictNullChecks": true,
     "importHelpers": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
