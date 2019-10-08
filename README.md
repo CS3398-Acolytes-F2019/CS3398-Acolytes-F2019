@@ -50,7 +50,8 @@ Using Vue and Vue's components such as:
 #### Austin
 Worked on File Uploading and diving into how we want to go about encrypting and decrypting files.
 
-This .md will continuosly be updated to track our progress with the encrypting format and process. (//github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/EncryptionFormat.md)
+This .md will continuosly be updated to track our progress with the encrypting format and process. 
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/EncryptionFormat.md
 
 ### Status
 
