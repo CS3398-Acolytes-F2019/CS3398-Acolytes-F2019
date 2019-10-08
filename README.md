@@ -40,6 +40,24 @@ Upload and sharing feature is done, however heavy refactorings are expected.
 #### Damen
 Making good progress. Biggest priority is getting team memebers on the same page.
 
+#### Ky Le
+
+Create User Interface(UI) 
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/08629f999c4efda041392f8da6a0139ba5fd3b4d
+Using Vue and Vue's components to such as:
+- web title.
+- animation circle when uploading file, so it will let's us know when a file is being loaded completely.
+- a input box, which links to local directory in your computer, will let you choose the file that you want to share.
+- a input box (optional), which let users enter a password.
+- a check box, which gives users option to delete the file after 1 day.
+- a check box, which gives users option to delete the file after 1 download.
+- a Encrypt and upload button, which will link to the encrypt function and then upload the file.
+
+- After a file is loaded, a URL will be generated. 
+
+### Status
+Done
+
 
 
 
