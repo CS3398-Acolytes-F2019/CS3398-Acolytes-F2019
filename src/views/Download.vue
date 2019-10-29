@@ -52,7 +52,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Loading from "../components/Loading.vue";
-// import { Firebase } from "../modules/Firebase";
+import { Firebase } from "../modules/Firebase";
 import { DownloadStream } from "../modules/Download";
 // import { aesGcmDecrypt } from '../modules/Encrypt';
 import { saveAs } from 'file-saver';
@@ -80,25 +80,20 @@ export default Vue.extend({
         async download(event: Event)
         {
             event.preventDefault();
-            let chunks = Math.ceil(this.size / 65536);
 
-            let key = window.location.href.split("/#")[1];
+            let reference = Firebase.storage().ref(`files/${this.$route.params.fileUrl}`);
 
-            const readableStream = new ReadableStream({
-                start: controller => { new DownloadStream(this.$route.params.fileUrl, key, this.size, controller) }
+            let url = await reference.getDownloadURL();
+
+            console.log(url);
+
+            let result = await fetch(url, {
+                method: "GET"
             });
 
-            let chunk = await readableStream.getReader().read();
+            let blob = await result.blob();
 
-            // let reference = Firebase.storage().ref(`files/${this.$route.params.fileUrl}/${0}.chunk`);
-
-            // let url = await reference.getDownloadURL();
-
-            // let result = await fetch(url, {
-            //     method: "GET"
-            // });
-
-            // let blob = await result.blob()
+            saveAs(blob, this.name);
 
             // let down = URL.createObjectURL(blob);
 
@@ -117,25 +112,25 @@ export default Vue.extend({
 
             if(this.deleteAfterOneDownload)
             {
-                // await Firebase.database().ref('files/' + this.$route.params.fileUrl).remove();
+                await Firebase.database().ref('files/' + this.$route.params.fileUrl).remove();
             }
 
         },
         async show()
         {
-            // let file = await Firebase.database().ref('files/' + this.$route.params.fileUrl).once('value');
+            let file = await Firebase.database().ref('files/' + this.$route.params.fileUrl).once('value');
 
 
-            // if (!file.val())
-            // {
-            //     this.$router.push("/404")
-            // }
+            if (!file.val())
+            {
+                this.$router.push("/404")
+            }
 
-            // this.name = file.val().name;
-            // this.size = file.val().size;
-            // this.password = file.val().options.password;
-            // this.deleteAfterOneDay = file.val().options.deleteAfterOneDay;
-            // this.deleteAfterOneDownload = file.val().options.deleteAfterOneDownload;
+            this.name = file.val().name;
+            this.size = file.val().size;
+            this.password = file.val().options.password;
+            this.deleteAfterOneDay = file.val().options.deleteAfterOneDay;
+            this.deleteAfterOneDownload = file.val().options.deleteAfterOneDownload;
 
             if (this.password)
             {
