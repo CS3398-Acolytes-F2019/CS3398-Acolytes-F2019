@@ -177,36 +177,47 @@ export default Vue.extend({
                 },
             });
 
-            if (!this.fileStream) return;
+            let storageReference = Firebase.storage().ref();
 
-            const reader = this.fileStream.getReader();
+            let fileReference = storageReference.child(`files/${fileUrl}`)
 
-            let chunk = await reader.read();
+            let uploadTask = fileReference.put(this.file);
 
-            let index = 0;
-
-            while (!chunk.done)
-            {
-
-                let storageReference = Firebase.storage().ref();
-
-                let fileReference = storageReference.child(`files/${fileUrl}/${index}.chunk`)
-
-                await fileReference.put(chunk.value);
-
-                index++;
-
-                let progress = (65536 * index) / this.file.size * 100;
-
-                if (progress > 100)
-                {
-                    progress = 100;
-                }
-
+            uploadTask.on('state_changed', (snapshot) => {
+                let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                 this.$root.$emit("update_progress_message", progress)
+            })
 
-                chunk = await reader.read();
-            }
+            // if (!this.fileStream) return;
+
+            // const reader = this.fileStream.getReader();
+
+            // let chunk = await reader.read();
+
+            // let index = 0;
+
+            // while (!chunk.done)
+            // {
+
+            //     // let storageReference = Firebase.storage().ref();
+
+            //     // let fileReference = storageReference.child(`files/${fileUrl}/${index}.chunk`)
+
+            //     // await fileReference.put(chunk.value);
+
+            //     index++;
+
+            //     let progress = (65536 * index) / this.file.size * 100;
+
+            //     if (progress > 100)
+            //     {
+            //         progress = 100;
+            //     }
+
+            //     this.$root.$emit("update_progress_message", progress)
+
+            //     chunk = await reader.read();
+            // }
 
             this.downloadUrl = `${window.location.href}download/${fileUrl}/#${this.key}`
             this.done();

@@ -1,4 +1,4 @@
-import { Firebase } from "./Firebase"; 
+// import { Firebase } from "./Firebase"; 
 export class DownloadStream
 {
 
@@ -50,17 +50,17 @@ export class DownloadStream
     {
         if(this.index == 1) return;
 
-        let reference = Firebase.storage().ref(`files/${this.file}/${this.index}.chunk`);
+        //let reference = Firebase.storage().ref(`files/${this.file}/${this.index}.chunk`);
 
-        let url = await reference.getDownloadURL();
+        // let url = await reference.getDownloadURL();
 
-        let result = await fetch(url, {
-            method: "GET"
-        });
+        // let result = await fetch(url, {
+        //     method: "GET"
+        // });
 
-        let blob = await result.blob()
+        //let blob = await result.blob()
 
-        await this.readerHandler(blob);
+        // await this.readerHandler(blob);
     }
 
 }
