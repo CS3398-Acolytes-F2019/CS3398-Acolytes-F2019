@@ -58,7 +58,7 @@ export default Vue.extend({
 
         const data: IData = {
             file: {} as File,
-            name: `Choose a File (${this.$props.maxSize / 1000000}MB)`,
+            name: `Choose a File`,
             size: 0,
             blured: false
         };
