@@ -1,4 +1,4 @@
-# Decrypt Format
+# Decryption Format
 
 * File-trust will decrypt the downloaded file(recieved from the URL) with the key recieved seperately from the sender.
 * Aiming to use AES-GCM encryption/decryption
