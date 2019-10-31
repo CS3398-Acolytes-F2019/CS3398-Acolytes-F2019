@@ -3,7 +3,7 @@
         <template>
             <div class="home">
                 <div class="share-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-                    <h1 class="display-4">File Trust</h1>
+                    
                     <hr />
                 </div>
                 <div class="text-center" v-if="downloadUrl">
