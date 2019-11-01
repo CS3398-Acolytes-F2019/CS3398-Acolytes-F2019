@@ -115,10 +115,17 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/30a9ae1eba
 #### Ky Le
 created Narbar which included multiple buttons (Dashboard, Login, Logout).
 
+#### Austin
+I worked on encrypting our uploaded files in an AES-GCM form.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/modules/Encrypt.ts
+
 ### Status
 
 #### Damen
 Progress is steady. Look forward to making the dashboard functional
+
+#### Austin
+Working on implementing encryption for files larger then one chunk 
 
 
 ## Table of contents
