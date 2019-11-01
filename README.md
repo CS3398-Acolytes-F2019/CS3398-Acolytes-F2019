@@ -120,6 +120,10 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/5ad2ab272f
 I worked on encrypting our uploaded files in an AES-GCM form.
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/modules/Encrypt.ts
 
+#### Jacob
+I researched into best methods and technologies for adding analytics to our app.
+https://github.com/cs3398-acolytes-f2019/cs3398-acolytes-f2019/issues/62
+
 ### Status
 
 #### Damen
@@ -129,7 +133,10 @@ Progress is steady. Look forward to making the dashboard functional
 will be working on implementation on Login and Register functionalities.
 
 #### Austin
-Working on implementing encryption for files larger then one chunk 
+Working on implementing encryption for files larger then one chunk
+
+#### Jacob
+Progress initially slow with analytics. Should have iceboxed research time. However, next sprint should be much more productive in implementing analytics into our app.
 
 
 ## Table of contents
