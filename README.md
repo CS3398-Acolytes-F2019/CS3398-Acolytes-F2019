@@ -111,6 +111,10 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/ce73090e37
 This commit implements upload on the dashboard.
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/30a9ae1eba9e0016cc4b7c5b3ce84e78dcc33e23
 
+
+#### Ky Le
+created Narbar which included multiple buttons (Dashboard, Login, Logout).
+
 ### Status
 
 #### Damen
