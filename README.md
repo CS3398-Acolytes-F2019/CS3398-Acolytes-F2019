@@ -91,6 +91,32 @@ Working to being encrpyting files now that we have the functionality.  Finding t
 Working on understanding file encryption and decryption as well as implementing file decryption.
 
 
+## Spring 2 Retrospective
+
+### Accomplishments
+
+#### Damen
+
+I created the dashboard, and streamlined streaming upload and download.
+
+This commit streamlines the file upload.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/04b47d3b27240ef693e1aee2944ce0cf4136f7f7
+
+This commit streamlines the file download.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/b63f36ebf1172ff30a5685a3c348ad1829aa6204
+
+This commit implements the dashboard
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/ce73090e37b4e4cbb4cfece64cbc16993912a220
+
+This commit implements upload on the dashboard.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/30a9ae1eba9e0016cc4b7c5b3ce84e78dcc33e23
+
+### Status
+
+#### Damen
+Progress is steady. Look forward to making the dashboard functional
+
+
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
