@@ -66,9 +66,9 @@ This .md will continuosly be updated to track our progress with the encrypting f
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/EncryptionFormat.md
 
 #### Jonathan
-Worked on the ability to share files via a link, removed server.ts, also researched the decryption process.
+Worked on the ability to encrypt and decrypt a file as well as further researched the decryption process.
 
-- once a file is uploaded the URL generated will be able to be shared to another system.
+- A .md has been created (https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/DecryptionFormat.md) discussing the methods and the benefits of the decryption we have chosen to use.
 
 ### Status
 
@@ -88,7 +88,7 @@ will be working on making the UI more attractive and more functions added.
 Working to being encrpyting files now that we have the functionality.  Finding the best format to go about this by researching similar examples and seeing what makes sense for our implementation.
 
 #### Jonathan
-Working on understanding file encryption and decryption as well as implementing file decryption.
+Working on understanding file encryption and decryption as well as implementing file decryption. Found a good format to decrypt with.
 
 
 ## Spring 2 Retrospective
