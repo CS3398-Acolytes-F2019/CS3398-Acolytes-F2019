@@ -5,40 +5,56 @@ import Download from './views/Download.vue';
 import Home from './views/Home.vue';
 import PageNotFound from './views/PageNotFound.vue';
 import Login from './components/Login.vue';
-import Register from './components/Register.vue'
+import Register from './components/Register.vue';
+import firebase from 'firebase';
 
 Vue.use(Router)
 
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
+let router = new Router({
+  
   routes: [
     {
       path: '/',
       name: 'upload',
-      component: Upload
+      component: Upload,
+      meta: {
+        requiresAuth: true
+    }
     },
     { 
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: {
+        requiresGuest: true
+    }
 
     },
     { 
       path: '/register',
       name: 'register',
-      component: Register
+      component: Register,
+      meta: {
+        requiresGuest: true
+    }
 
     },
     {
       path: '/download/:fileUrl',
       name: 'download',
-      component: Download
+      component: Download ,
+      meta: {
+        requiresAuth: false
+      }
+      
     },
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+          requiresAuth: true
+      }
     },
     {
       path: '*',
@@ -46,4 +62,34 @@ export default new Router({
       component: PageNotFound
     }
   ]
-})
+});
+
+router.beforeEach((to, from, next) => {
+  if(to.matched.some(record => record.meta.requiresAuth)){
+    if(!firebase.auth().currentUser) {
+      next({
+        path: '/login',
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    } else {
+      next();
+    }
+  } else if(to.matched.some(record => record.meta.requiresGuest)){
+    if(firebase.auth().currentUser) {
+      next({
+        path: '/',
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
+
+export default router;

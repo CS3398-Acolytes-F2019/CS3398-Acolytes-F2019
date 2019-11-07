@@ -12,5 +12,4 @@ const config = {
     databaseURL: "https://file-trust.firebaseio.com/",
     storageBucket: "gs://file-trust.appspot.com"
 }
-
 export const Firebase = firebase.initializeApp(config);

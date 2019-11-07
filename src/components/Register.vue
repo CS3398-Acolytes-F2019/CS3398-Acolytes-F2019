@@ -3,20 +3,21 @@
         <div class="container">
             <dir class="row">
                 <div class="col s12 m8 offset-m2">
-                    <div class="login card-panel grey lighten-4 black-text center">
-                    <h2>Register</h2>
+                    
+                    <div class="login card-panel red lighten-3 white-text center">
+                    <h2 class="red-text">Register</h2>
                     <form>
-                        <div class="input-field">
-                            <i class="material-icons prefix">email</i>
-                            <input type="text" id="email">
-                            <label for="email">Email</label>
+                        <div class="form-group">
+                         <label for="exampleInputEmail1 white-text">Email address</label>
+                         <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-texttext-muted">We'll never share your email with anyone else.</small>
                         </div>
-                        <div class="input-field">
-                            <i class="material-icons prefix">lock</i>
-                            <input type="password" id="password">
-                            <label for="password">Password</label>
+                        <div class="form-group">
+                         <label for="exampleInputPassword1">Password</label>
+                         <input type="password" v-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
-                        <button class="btn btn-large grey lighten-4 black-text">Register</button>
+                         
+                         <button type="submit" @click="register" class="btn btn-primary">Submit</button>
                     </form>
                     </div>
                 </div>
@@ -27,10 +28,30 @@
 </template>
 
 <script>
+import firebase from 'firebase';
+
 export default {
     name: 'register',
     data: function() {
-        return{}
+        return{
+            email: '',
+            password: ''
+        };
+    },
+    methods: {
+        register: function(e){
+            firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+            .then(user => {
+                alert (`Account created for ${this.email}`);
+                this.$router.push('/');
+                this.$router.go({ path: this.$router.path});
+                
+            },
+            err => {
+                alert(err.message);
+            });
+            e.preventDefault();
+        }
     }
 }
 </script>
