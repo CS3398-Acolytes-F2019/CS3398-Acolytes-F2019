@@ -66,9 +66,9 @@ This .md will continuosly be updated to track our progress with the encrypting f
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/EncryptionFormat.md
 
 #### Jonathan
-Worked on the ability to share files via a link, removed server.ts, also researched the decryption process.
+Worked on the ability to encrypt and decrypt a file as well as further researched the decryption process.
 
-- once a file is uploaded the URL generated will be able to be shared to another system.
+- A .md has been created (https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/DecryptionFormat.md) discussing the methods and the benefits of the decryption we have chosen to use.
 
 ### Status
 
@@ -88,7 +88,55 @@ will be working on making the UI more attractive and more functions added.
 Working to being encrpyting files now that we have the functionality.  Finding the best format to go about this by researching similar examples and seeing what makes sense for our implementation.
 
 #### Jonathan
-Working on understanding file encryption and decryption as well as implementing file decryption.
+Working on understanding file encryption and decryption as well as implementing file decryption. Found a good format to decrypt with.
+
+
+## Spring 2 Retrospective
+
+### Accomplishments
+
+#### Damen
+
+I created the dashboard, and streamlined streaming upload and download.
+
+This commit streamlines the file upload.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/04b47d3b27240ef693e1aee2944ce0cf4136f7f7
+
+This commit streamlines the file download.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/b63f36ebf1172ff30a5685a3c348ad1829aa6204
+
+This commit implements the dashboard
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/ce73090e37b4e4cbb4cfece64cbc16993912a220
+
+This commit implements upload on the dashboard.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/30a9ae1eba9e0016cc4b7c5b3ce84e78dcc33e23
+
+
+#### Ky Le
+created Narbar which included multiple buttons (Dashboard, Login, Logout).
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/5ad2ab272f44928e29f51c1dd222bb3d553f29fb
+
+#### Austin
+I worked on encrypting our uploaded files in an AES-GCM form.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/modules/Encrypt.ts
+
+#### Jacob
+I researched into best methods and technologies for adding analytics to our app.
+https://github.com/cs3398-acolytes-f2019/cs3398-acolytes-f2019/issues/62
+
+### Status
+
+#### Damen
+Progress is steady. Look forward to making the dashboard functional
+
+#### Ky 
+will be working on implementation on Login and Register functionalities.
+
+#### Austin
+Working on implementing encryption for files larger then one chunk
+
+#### Jacob
+Progress initially slow with analytics. Should have iceboxed research time. However, next sprint should be much more productive in implementing analytics into our app.
 
 
 ## Table of contents
