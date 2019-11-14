@@ -124,6 +124,10 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/m
 I researched into best methods and technologies for adding analytics to our app.
 https://github.com/cs3398-acolytes-f2019/cs3398-acolytes-f2019/issues/62
 
+#### Jonathan
+Researched various methods of decryption and collaborated with Austin on the encryption methods.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/DecryptionFormat.md 
+
 ### Status
 
 #### Damen
@@ -137,6 +141,9 @@ Working on implementing encryption for files larger then one chunk
 
 #### Jacob
 Progress initially slow with analytics. Should have iceboxed research time. However, next sprint should be much more productive in implementing analytics into our app.
+
+#### Jonathan
+Continuing to implement and improve the decryption process.
 
 
 ## Table of contents
