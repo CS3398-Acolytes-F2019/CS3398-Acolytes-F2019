@@ -32,7 +32,7 @@
                                     <br />
                                     <div class="text-center">
                                         <button
-                                            class="btn btn-primary"
+                                            class="btn btn-primary light-blue darken-4"
                                             :disabled="isDisabled"
                                             @click="download"
                                         >Download</button>
