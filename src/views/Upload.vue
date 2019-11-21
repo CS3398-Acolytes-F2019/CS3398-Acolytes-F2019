@@ -2,10 +2,8 @@
     <div class="upload">
         <template>
             <div class="home">
-                <div class="share-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-                    
-                    <hr />
-                </div>
+                <br/>
+                <br/>
                 <div class="text-center" v-if="downloadUrl">
                     <div class="alert alert-success" role="alert">
                         <strong>File Uploaded!</strong>
@@ -41,26 +39,25 @@
                                         />
                                     </div>
                                     <div class="form-check">
-                                        <input
-                                            type="checkbox"
-                                            class="form-check-input"
-                                            id="option1Day"
-                                            v-model="deleteAfterOneDay"
-                                        />
-                                        <label
-                                            class="form-check-label"
-                                            for="option1Day"
-                                        >Delete after 1 day</label>
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                class="form-check-input"
+                                                id="option1Day"
+                                                v-model="deleteAfterOneDay"
+                                            />
+                                            <span>Delete after 1 day</span>
+                                        </label>
                                     </div>
                                     <div class="form-check">
-                                        <input
-                                            type="checkbox"
-                                            class="form-check-input"
-                                            id="option1Download"
-                                            v-model="deleteAfterOneDownload"
-                                        />
-                                        <label class="form-check-label" for="option1Download">
-                                            Delete after 1 download
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                class="form-check-input"
+                                                id="option1Download"
+                                                v-model="deleteAfterOneDownload"
+                                            />
+                                            <span>Delete after 1 download</span>
                                         </label>
                                     </div>
                                     <br />
@@ -181,7 +178,7 @@ export default Vue.extend({
 
             let uploadTask = fileReference.put(this.file);
 
-            uploadTask.on('state_changed', (snapshot) => {
+            uploadTask.on('state_changed', (snapshot) =>            {
                 let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                 this.$root.$emit("update_progress_message", progress)
             })
