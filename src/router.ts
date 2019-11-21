@@ -18,7 +18,7 @@ let router = new Router({
       name: 'upload',
       component: Upload,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
     }
     },
     { 

@@ -1,8 +1,8 @@
 <template>
     <nav>
-        <div class="nav-wrapper blue">
+        <div class="nav-wrapper light-blue darken-4">
             <div class="container">
-                <router-link to="/" class="brand-logo left-align"><h1>File Trust</h1></router-link>
+                <router-link to="/" class="brand-logo left-align">File Trust</router-link>
                 <ul class="right">
                 <li v-if="isLoggedIn"><span class="email red-text">{{currentUser}}</span></li>
                 <li><router-link to="/">Home</router-link></li>
@@ -31,7 +31,7 @@ export default {
             currentUser: false
         };
     },
-    created() {
+    0() {
         if(firebase.auth().currentUser) {
             this.isLoggedIn = true;
             this.currentUser= firebase.auth().currentUser.email;

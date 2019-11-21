@@ -109,7 +109,6 @@ export default Vue.extend({
     {
         interface IData
         {
-            maxSize: number;
             fileStream: ReadableStream | null;
             file: File | null;
             key: string | null;
@@ -121,7 +120,6 @@ export default Vue.extend({
         }
 
         const data: IData = {
-            maxSize: 1e+6,
             fileStream: null,
             file: null,
             key: null,
