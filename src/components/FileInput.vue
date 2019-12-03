@@ -76,12 +76,12 @@ export default Vue.extend({
 
             if (!file) return;
 
-            if (file.size > this.$props.maxSize)
-            {
-                this.blured = true;
-                this.name = "File Too Powerful!"
-                return;
-            }
+            // if (file.size > this.$props.maxSize)
+            // {
+            //     this.blured = true;
+            //     this.name = "File Too Powerful!"
+            //     return;
+            // }
 
             this.blured = false;
 
