@@ -40,7 +40,7 @@ export default {
     methods: {
         logout: function(){
             firebase.auth().signOut().then(() => {
-                this.$router.push('/login');
+                this.$router.push('/');
                 this.$router.go({ path: this.$router.path});
               
             })
