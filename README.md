@@ -66,7 +66,8 @@ This .md will continuosly be updated to track our progress with the encrypting f
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/EncryptionFormat.md
 
 #### Jonathan
-Worked on the ability to encrypt and decrypt a file as well as further researched the decryption process.
+Further researched the decryption process in terms of improvment of the AES-256 encryption/decryption process.
+However I was unable to improve the process. The process we currently have is effective.
 
 - A .md has been created (https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/DecryptionFormat.md) discussing the methods and the benefits of the decryption we have chosen to use.
 
@@ -88,7 +89,7 @@ Next steps are to bring the team on the same page and continue learning and impl
 - Working to being encrpyting files now that we have the functionality.  Finding the best format to go about this by researching similar examples and seeing what makes sense for our implementation.
 
 #### Jonathan
-- Working on understanding file encryption and decryption as well as implementing file decryption. Found a good format to decrypt with.
+- Working on improving file encryption and decryption.
 
 
 ## Spring 2 Retrospective
@@ -125,7 +126,7 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/m
 https://github.com/cs3398-acolytes-f2019/cs3398-acolytes-f2019/issues/62
 
 #### Jonathan
-- Researched various methods of decryption and collaborated with Austin on the encryption methods.
+- Researched methods of improving the decryption method while collaborating with Austin.
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/DecryptionFormat.md 
 
 ### Status
