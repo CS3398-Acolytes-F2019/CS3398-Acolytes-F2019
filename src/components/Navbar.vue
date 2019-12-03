@@ -31,7 +31,7 @@ export default {
             currentUser: false
         };
     },
-    0() {
+    created() {
         if(firebase.auth().currentUser) {
             this.isLoggedIn = true;
             this.currentUser= firebase.auth().currentUser.email;
@@ -40,7 +40,7 @@ export default {
     methods: {
         logout: function(){
             firebase.auth().signOut().then(() => {
-                this.$router.push('/login');
+                this.$router.push('/');
                 this.$router.go({ path: this.$router.path});
               
             })

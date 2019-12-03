@@ -7,6 +7,7 @@ import PageNotFound from './views/PageNotFound.vue';
 import Login from './components/Login.vue';
 import Register from './components/Register.vue';
 import firebase from 'firebase';
+import Upload2 from './views/Upload-Auth.vue';
 
 Vue.use(Router)
 
@@ -19,6 +20,14 @@ let router = new Router({
       component: Upload,
       meta: {
         requiresAuth: false
+    }
+    },
+    {
+      path: '/upload-Auth',
+      name: 'upload-Auth',
+      component: Upload2,
+      meta: {
+        requiresAuth: true
     }
     },
     { 
@@ -53,7 +62,7 @@ let router = new Router({
       name: 'home',
       component: Home,
       meta: {
-          requiresAuth: true
+          requiresAuth: false
       }
     },
     {
