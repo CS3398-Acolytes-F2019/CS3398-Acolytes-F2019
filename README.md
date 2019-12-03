@@ -75,20 +75,20 @@ Worked on the ability to encrypt and decrypt a file as well as further researche
 Upload and sharing feature is done, however heavy refactorings are expected.
 
 #### Damen
-Making good progress. Biggest priority is getting team memebers on the same page.
+- Making good progress. Biggest priority is getting team memebers on the same page.
 
 #### Jacob
-Making good progress learning about Firebase and implementing code to interact with Firebase.
+- Making good progress learning about Firebase and implementing code to interact with Firebase.
 Next steps are to bring the team on the same page and continue learning and implementing more Firebase features.
 
 ### Ky
-will be working on making the UI more attractive and more functions added.
+- Will be working on making the UI more attractive and more functions added.
 
 ### Austin
-Working to being encrpyting files now that we have the functionality.  Finding the best format to go about this by researching similar examples and seeing what makes sense for our implementation.
+- Working to being encrpyting files now that we have the functionality.  Finding the best format to go about this by researching similar examples and seeing what makes sense for our implementation.
 
 #### Jonathan
-Working on understanding file encryption and decryption as well as implementing file decryption. Found a good format to decrypt with.
+- Working on understanding file encryption and decryption as well as implementing file decryption. Found a good format to decrypt with.
 
 
 ## Spring 2 Retrospective
@@ -113,47 +113,47 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/30a9ae1eba
 
 
 #### Ky Le
-created Narbar which included multiple buttons (Dashboard, Login, Logout).
+- Created Narbar which included multiple buttons (Dashboard, Login, Logout).
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/5ad2ab272f44928e29f51c1dd222bb3d553f29fb
 
 #### Austin
-I worked on encrypting our uploaded files in an AES-GCM form.
+- I worked on encrypting our uploaded files in an AES-GCM form.
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/src/modules/Encrypt.ts
 
 #### Jacob
-I researched into best methods and technologies for adding analytics to our app.
+- I researched into best methods and technologies for adding analytics to our app.
 https://github.com/cs3398-acolytes-f2019/cs3398-acolytes-f2019/issues/62
 
 #### Jonathan
-Researched various methods of decryption and collaborated with Austin on the encryption methods.
+- Researched various methods of decryption and collaborated with Austin on the encryption methods.
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/DecryptionFormat.md 
 
 ### Status
 
 #### Damen
-Progress is steady. Look forward to making the dashboard functional
+- Progress is steady. Look forward to making the dashboard functional
 
 #### Ky 
-will be working on implementation on Login and Register functionalities.
+- Will be working on implementation on Login and Register functionalities.
 
 #### Austin
-Working on implementing encryption for files larger then one chunk
+- Working on implementing encryption for files larger then one chunk
 
 #### Jacob
-Progress initially slow with analytics. Should have iceboxed research time. However, next sprint should be much more productive in implementing analytics into our app.
+- Progress initially slow with analytics. Should have iceboxed research time. However, next sprint should be much more productive in implementing analytics into our app.
 
 #### Jonathan
-Continuing to implement and improve the decryption process.
+- Continuing to implement and improve the decryption process.
 
 ## Spring 3 Retrospective
 ### Accomplishments
 
 #### Ky Le
-modified Firebase for Authentication by using email.
-implemented functionalities of login, resgiter.
-retricted dashboard and logout buttons which are only appeared when logging in otherwise they would be hidden. 
-retricted login and register bottons which are only appeared when not logging in otherwise they would be hidden.
-showing emails of users when logging. 
+- Modified Firebase for Authentication by using email.
+- Implemented functionalities of login, resgiter.
+- Retricted dashboard and logout buttons which are only appeared when logging in otherwise they would be hidden. 
+- Retricted login and register bottons which are only appeared when not logging in otherwise they would be hidden.
+- Showing emails of users when logging. 
 
 #### Damen
 

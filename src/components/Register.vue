@@ -78,7 +78,11 @@ export default {
         register: function(e){
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
             .then(user => {
-                this.$router.push('/upload-Auth');
+
+                alert (`Account created for ${this.email}`);
+                this.$router.push('/');
+
+            
                 this.$router.go({ path: this.$router.path});
                 
             },
