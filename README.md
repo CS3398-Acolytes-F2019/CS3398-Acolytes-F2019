@@ -145,6 +145,15 @@ Progress initially slow with analytics. Should have iceboxed research time. Howe
 #### Jonathan
 Continuing to implement and improve the decryption process.
 
+## Spring 3 Retrospective
+### Accomplishments
+
+#### Ky Le
+modified Firebase for Authentication by using email.
+implemented functionalities of login, resgiter.
+retricted dashboard and logout buttons which are only appeared when logging in otherwise they would be hidden. 
+retricted login and register bottons which are only appeared when not logging in otherwise they would be hidden.
+showing emails of users when logging. 
 
 ## Table of contents
 * [General info](#general-info)
