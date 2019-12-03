@@ -155,6 +155,34 @@ retricted dashboard and logout buttons which are only appeared when logging in o
 retricted login and register bottons which are only appeared when not logging in otherwise they would be hidden.
 showing emails of users when logging. 
 
+#### Damen
+
+Improved the UI for the navbar
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/1af620656113f5d1debfb88f54fe331eb2e6ed29
+
+Improved the UI for Upload View
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/48f958a40f9aca7008e01755d1c7a1e0b7e2b798
+
+Improved the UI for the Download View
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/a38d7ca577f94b335a42c91acad9a0d11fb674fe
+
+Improved the UI for the Login View
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/a00ba1acbc66f22feaf8ee08d15cd73ee4032a0e
+
+Improved the UI for the Register View
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/11150a199b37adf110dda1e02c658f3de31143a8
+
+Improved the UI for the Home view
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/11150a199b37adf110dda1e02c658f3de31143a8
+
+
+### Status
+
+#### Damen 
+
+Finished with a general polishing of the UI across the entire app.
+
+
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
