@@ -176,12 +176,19 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/11150a199b
 Improved the UI for the Home view
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/11150a199b37adf110dda1e02c658f3de31143a8
 
+#### Jonathan
+
+Worked on finding a method of improving the decryption and encryption process, found that ours was rater effective.
 
 ### Status
 
 #### Damen 
 
 Finished with a general polishing of the UI across the entire app.
+
+#### Jonathan
+
+Begin work on addtional features.
 
 
 ## Table of contents
