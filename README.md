@@ -92,7 +92,7 @@ Next steps are to bring the team on the same page and continue learning and impl
 - Working on improving file encryption and decryption.
 
 
-## Spring 2 Retrospective
+## Sprint 2 Retrospective
 
 ### Accomplishments
 
@@ -146,7 +146,7 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/Decry
 #### Jonathan
 - Continuing to implement and improve the decryption process.
 
-## Spring 3 Retrospective
+## Sprint 3 Retrospective
 ### Accomplishments
 
 #### Ky Le
@@ -183,6 +183,13 @@ Worked on finding a method of improving the decryption and encryption process, f
 #### Austin
 Worked to refactor encyrption process.
 
+#### Jacob
+Refactored navbar UI code by adding more container classes for better organization.
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/64d8cdbed2f035bd6156071e6dda2239b1b5b3fa
+
+Further improved navbar UI alignment
+https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/7a9db814180feb89d5557c49fcb187d15d0f7a7e
+
 ### Status
 
 #### Damen 
@@ -196,6 +203,10 @@ Begin work on addtional features.
 #### Austin
 
 Work to further improve user options when uploading downloading files.
+
+#### Jacob
+
+Work to add data analytics hooks and save that data to Firebase.
 
 
 ## Table of contents
