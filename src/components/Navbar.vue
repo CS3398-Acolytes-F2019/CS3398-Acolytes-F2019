@@ -2,14 +2,16 @@
     <nav>
         <div class="nav-wrapper light-blue darken-4">
             <div class="container">
-                <router-link to="/" class="brand-logo left-align">File Trust</router-link>
+                <ul class="left">
+                    <router-link to="/" class="brand-logo left-align">File Trust</router-link>
+                </ul>
                 <ul class="right">
-                <li v-if="isLoggedIn"><span class="email">{{currentUser}}</span></li>
-                <li><router-link to="/">Home</router-link></li>
-                <li v-if="isLoggedIn"><router-link to="/home">Dashboard</router-link></li>
-                <li v-if="!isLoggedIn"><router-link  to="/login">Login</router-link></li>
-                <li v-if="!isLoggedIn"><router-link  to="/register">Register</router-link></li>
-                <li v-if="isLoggedIn"><button  @click="logout" class="btn grey">Logout</button></li>
+                    <li v-if="isLoggedIn"><span class="email">{{currentUser}}</span></li>
+                    <li><router-link to="/">Home</router-link></li>
+                    <li v-if="isLoggedIn"><router-link to="/home">Dashboard</router-link></li>
+                    <li v-if="!isLoggedIn"><router-link  to="/login">Login</router-link></li>
+                    <li v-if="!isLoggedIn"><router-link  to="/register">Register</router-link></li>
+                    <li v-if="isLoggedIn"><button  @click="logout" class="btn grey">Logout</button></li>
                 </ul>
             </div>
         
