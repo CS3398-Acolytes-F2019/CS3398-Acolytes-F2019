@@ -87,7 +87,13 @@ export default Vue.extend({
         return data
     },
     methods: {
-        
+        fileInputHandler(options: any)
+        {
+            this.fileStream = options.readableStream;
+            this.file = options.file;
+            this.key = options.password;
+            this.isDisabled = false;
+        },
     },
     components: {
         UploadModal
