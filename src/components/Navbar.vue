@@ -5,6 +5,8 @@
                 <ul class="left">
                     <router-link to="/" class="brand-logo left-align">File Trust</router-link>
                 </ul>
+            </div>
+            <div class="container">
                 <ul class="right">
                     <li v-if="isLoggedIn"><span class="email">{{currentUser}}</span></li>
                     <li><router-link to="/">Home</router-link></li>
@@ -14,7 +16,6 @@
                     <li v-if="isLoggedIn"><button  @click="logout" class="btn grey">Logout</button></li>
                 </ul>
             </div>
-        
         </div>
 
 
