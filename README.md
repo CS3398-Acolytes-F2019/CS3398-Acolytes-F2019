@@ -150,6 +150,8 @@ https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/blob/master/Decry
 ### Accomplishments
 
 #### Ky Le
+  https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/5db58499a540717306ba6bf61c2dd2bc843ed1c6
+  https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/f772343084092fdaa411a00678d697aece3b71f5
 - Modified Firebase for Authentication by using email.
 - Implemented functionalities of login, resgiter.
 - Retricted dashboard and logout buttons which are only appeared when logging in otherwise they would be hidden. 
@@ -191,6 +193,9 @@ Further improved navbar UI alignment
 https://github.com/CS3398-Acolytes-F2019/CS3398-Acolytes-F2019/commit/7a9db814180feb89d5557c49fcb187d15d0f7a7e
 
 ### Status
+
+#### Ky
+begin work on multiple sign in methods, such as using existing google, facebook accounts.
 
 #### Damen 
 
